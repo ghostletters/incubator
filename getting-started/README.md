@@ -20,7 +20,21 @@ Start services
 docker-compose -f docker/docker-compose.yml up
 ```
 
-# Pulsar Mannger
+
+# Quarkus App (Java)
+
+This project uses Quarkus, the Supersonic Subatomic Java Framework.
+
+If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+## Running the application in dev mode
+
+You can run your application in dev mode that enables live coding using:
+```
+./mvnw quarkus:dev
+```
+
+# Optional: Pulsar Mannger
 
 Add admin account - details: https://pulsar.apache.org/docs/en/administration-pulsar-manager/
 
@@ -43,17 +57,3 @@ Create New Environment
 - Service URL: `http://pulsar:8080`
 
 Check http://localhost:9527/#/management/namespaces/public/default/namespace?tab=topics
-
-
-# Quarkus App (Java)
-
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```
-./mvnw quarkus:dev
-```
