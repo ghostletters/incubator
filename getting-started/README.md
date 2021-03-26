@@ -4,9 +4,9 @@ Downlaod [Debezium PostgreSQL CDC source](https://pulsar.apache.org/en/download/
 ```
 sh ./download_io_connector.sh
 ```
-- reads pulsar client version from `pom.xml` and sets it for docker-compose.yml
-  - PULSAR_VERSION `2.7.1`
 - copies the `.nar` file to `./docker/io_connectors/`. 
+- updates `docker-compose.yml` with pulsar client version from `pom.xml` 
+  - PULSAR_VERSION `2.7.1`
 
 # Docker Setup
 
