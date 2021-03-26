@@ -1,0 +1,50 @@
+{
+  "level": "error",
+  "ts": 1609370982.6111445,
+  "logger": "http.log.access",
+  "msg": "handled request",
+  "request": {
+    "remote_addr": "31.17.185.77:55784",
+    "proto": "HTTP/2.0",
+    "method": "GET",
+    "host": "ghostletters.xyz",
+    "uri": "/some-pic",
+    "headers": {
+      "User-Agent": [
+        "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+      ],
+      "Accept": [
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+      ],
+      "Accept-Language": [
+        "en-US,en;q=0.5"
+      ],
+      "Accept-Encoding": [
+        "gzip, deflate, br"
+      ],
+      "Upgrade-Insecure-Requests": [
+        "1"
+      ],
+      "Te": [
+        "trailers"
+      ]
+    },
+    "tls": {
+      "resumed": false,
+      "version": 772,
+      "cipher_suite": 4865,
+      "proto": "h2",
+      "proto_mutual": true,
+      "server_name": "ghostletters.xyz"
+    }
+  },
+  "common_log": "31.17.185.77 - - [31/Dec/2020:00:29:42 +0100] \"GET /some-pic HTTP/2.0\" 404 0",
+  "duration": 0.000156871,
+  "size": 0,
+  "status": 404,
+  "resp_headers": {
+    "Server": [
+      "Caddy"
+    ]
+  }
+}

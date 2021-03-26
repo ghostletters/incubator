@@ -1,0 +1,1 @@
+Okay, I looks like #caddy does some weird merging of the config provided via JSON API and the #caddyfile. In the end the caddyfile was straight forward, but unsure why it did not work before with the API

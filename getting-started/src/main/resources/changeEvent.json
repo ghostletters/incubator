@@ -1,0 +1,22 @@
+{
+  "before": null,
+  "after": {
+    "id": 2,
+    "name": "Apple"
+  },
+  "source": {
+    "version": "1.0.0.Final",
+    "connector": "postgresql",
+    "name": "foo",
+    "ts_ms": 1604523772263,
+    "snapshot": "false",
+    "db": "postgres",
+    "schema": "public",
+    "table": "gift",
+    "txId": 4974,
+    "lsn": 59547792,
+    "xmin": null
+  },
+  "op": "c",
+  "ts_ms": 1604523772279
+}

@@ -1,0 +1,69 @@
+{
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": [
+            ":443"
+          ],
+          "routes": [
+            {
+              "match": [
+                {
+                  "host": [
+                    "ghostletters.xyz"
+                  ]
+                }
+              ],
+              "handle": [
+                {
+                  "handler": "subroute",
+                  "routes": [
+                    {
+                      "handle": [
+                        {
+                          "handler": "vars",
+                          "root": "/usr/share/caddy"
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "handler": "rewrite",
+                          "uri": "{http.matchers.file.relative}"
+                        }
+                      ],
+                      "match": [
+                        {
+                          "file": {
+                            "try_files": [
+                              "{http.request.uri.path}.html",
+                              "{http.request.uri.path}",
+                              "index.html"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "handler": "file_server",
+                          "hide": [
+                            "/etc/caddy/Caddyfile"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "terminal": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

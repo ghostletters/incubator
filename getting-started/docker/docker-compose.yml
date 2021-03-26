@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: changeme
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./my-postgres.conf:/etc/postgresql/postgresql.conf"
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
+    environment:
+      discovery.type: single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.3
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+  pulsar:
+    image: apachepulsar/pulsar:2.6.1
+    hostname: pulsar
+    command: bin/pulsar standalone
+    ports:
+      - "8080:8080"
+      - "6650:6650"
+    volumes:
+      - "./data/:/pulsar/data"
+      - "~/Downloads/pulsar-io-debezium-postgres-2.6.1.nar:/pulsar/connectors/pulsar-io-debezium-postgres-2.6.1.nar"
+      - "~/Downloads/pulsar-io-elastic-search-2.6.1.nar:/pulsar/connectors/pulsar-io-elastic-search-2.6.1.nar"
+
+  dashboard:
+    # you must create an admin account https://pulsar.apache.org/docs/en/administration-pulsar-manager/
+    # Service URL is http://pulsar:8080 - 'pulsar' is the name of the docker service here
+    image: apachepulsar/pulsar-manager:v0.2.0
+    ports:
+      - "9527:9527"
+      - "7750:7750"
+    depends_on:
+      - pulsar
+    links:
+      - pulsar
+    environment:
+      SPRING_CONFIGURATION_FILE: /pulsar-manager/pulsar-manager/application.properties
+      PULSAR_PEEK_MESSAGE: "true"
+
+
+
