@@ -37,7 +37,8 @@ services:
       - "./data/:/pulsar/data"
       # see README.md for download instruction
       - "~/Downloads/pulsar-io-debezium-postgres-2.6.1.nar:/pulsar/connectors/pulsar-io-debezium-postgres-2.6.1.nar"
-      - "~/Downloads/pulsar-io-elastic-search-2.6.1.nar:/pulsar/connectors/pulsar-io-elastic-search-2.6.1.nar"
+      # not used yet
+      #- "~/Downloads/pulsar-io-elastic-search-2.6.1.nar:/pulsar/connectors/pulsar-io-elastic-search-2.6.1.nar"
 
   dashboard:
     # see README.md for admin user setup instruction

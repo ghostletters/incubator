@@ -13,6 +13,10 @@ You can run your application in dev mode that enables live coding using:
 
 # Pulsar IO connectors
 
+Requieres manual download of connectors:
+
+- [Debezium PostgreSQL CDC source](https://debezium.io/)
+
 Downlaod `.nar` files from [https://pulsar.apache.org/en/download/](https://pulsar.apache.org/en/download/) and place in folder
 
 ```
