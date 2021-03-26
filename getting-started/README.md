@@ -34,7 +34,7 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
-# Optional: Pulsar Mannger
+# Optional: Pulsar Manager
 
 Add admin account - details: https://pulsar.apache.org/docs/en/administration-pulsar-manager/
 
