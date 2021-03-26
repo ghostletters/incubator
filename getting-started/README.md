@@ -40,5 +40,11 @@ curl \
 -d '{"name": "admin", "password": "changeme", "description": "test", "email": "username@test.org"}'
 ```
 
-# Pulsar Admin Mannger service URL - 'pulsar' is the name of the docker service here
-http://pulsar:8080
+Pulsar Manager UI at http://localhost:9527
+
+Create New Environment
+- Name: `pulsar`
+  - is the name of the docker service here
+- Service URL: `http://pulsar:8080`
+
+Check http://localhost:9527/#/management/namespaces/public/default/namespace?tab=topics
