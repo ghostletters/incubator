@@ -18,8 +18,8 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>1.9.0.Final</quarkus.platform.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-        <pulsar.client.version>2.6.1</pulsar.client.version>
-        <elasticsearch.client.version>7.9.3</elasticsearch.client.version>
+        <pulsar.client.version>2.7.1</pulsar.client.version>
+        <elasticsearch.client.version>7.12.0</elasticsearch.client.version>
     </properties>
     <dependencyManagement>
         <dependencies>
