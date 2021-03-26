@@ -12,6 +12,7 @@ You can run your application in dev mode that enables live coding using:
 ```
 
 # add admin account
+```
   CSRF_TOKEN=$(curl http://localhost:7750/pulsar-manager/csrf-token)
   curl \
 -H 'X-XSRF-TOKEN: $CSRF_TOKEN' \
@@ -19,6 +20,7 @@ You can run your application in dev mode that enables live coding using:
 -H "Content-Type: application/json" \
   -X PUT http://localhost:7750/pulsar-manager/users/superuser \
 -d '{"name": "admin", "password": "changeme", "description": "test", "email": "username@test.org"}'
+```
 
 # pulsar Service URL
   http://pulsar:8080
