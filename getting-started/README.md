@@ -1,5 +1,3 @@
-# getting-started project
-
 # Pulsar IO connectors
 
 Requieres manual download of connectors:
