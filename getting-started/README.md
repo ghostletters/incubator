@@ -11,7 +11,7 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
-# add admin account
+# Add Pulsar Admin Mannger admin account - details: https://pulsar.apache.org/docs/en/administration-pulsar-manager/
 ```
 CSRF_TOKEN=$(curl http://localhost:7750/pulsar-manager/csrf-token)
 
@@ -23,5 +23,5 @@ curl \
 -d '{"name": "admin", "password": "changeme", "description": "test", "email": "username@test.org"}'
 ```
 
-# pulsar Service URL
-  http://pulsar:8080
+# Pulsar Admin Mannger service URL - 'pulsar' is the name of the docker service here
+http://pulsar:8080

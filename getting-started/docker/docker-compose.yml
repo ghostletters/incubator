@@ -35,12 +35,12 @@ services:
       - "6650:6650"
     volumes:
       - "./data/:/pulsar/data"
+      # see README.md for download instruction
       - "~/Downloads/pulsar-io-debezium-postgres-2.6.1.nar:/pulsar/connectors/pulsar-io-debezium-postgres-2.6.1.nar"
       - "~/Downloads/pulsar-io-elastic-search-2.6.1.nar:/pulsar/connectors/pulsar-io-elastic-search-2.6.1.nar"
 
   dashboard:
-    # you must create an admin account https://pulsar.apache.org/docs/en/administration-pulsar-manager/
-    # Service URL is http://pulsar:8080 - 'pulsar' is the name of the docker service here
+    # see README.md for admin user setup instruction
     image: apachepulsar/pulsar-manager:v0.2.0
     ports:
       - "9527:9527"
