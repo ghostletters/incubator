@@ -38,6 +38,8 @@ sh create_pulsar_manager_admin.sh
 ```
 
 - Open UI at http://localhost:9527
+  - login: `admin`
+  - password: `changeme`
 - Press **New Environment**
   - Environment Name: `pulsar` - is the name of the docker service here
   - Service URL: `http://pulsar:8080`
