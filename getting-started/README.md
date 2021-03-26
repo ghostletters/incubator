@@ -1,16 +1,5 @@
 # getting-started project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```
-./mvnw quarkus:dev
-```
-
 # Pulsar IO connectors
 
 Requieres manual download of connectors:
@@ -24,6 +13,14 @@ Downlaod `.nar` files from [https://pulsar.apache.org/en/download/](https://puls
 ```
 
 Check version in `./docker/docker-compose.yml`. Current version `2.6.1`.
+
+# Docker Setup
+
+Start services
+
+```
+docker-compose -f docker/docker-compose.yml up
+```
 
 # Pulsar Mannger
 
@@ -48,3 +45,17 @@ Create New Environment
 - Service URL: `http://pulsar:8080`
 
 Check http://localhost:9527/#/management/namespaces/public/default/namespace?tab=topics
+
+
+# Quarkus App (Java)
+
+This project uses Quarkus, the Supersonic Subatomic Java Framework.
+
+If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+## Running the application in dev mode
+
+You can run your application in dev mode that enables live coding using:
+```
+./mvnw quarkus:dev
+```
