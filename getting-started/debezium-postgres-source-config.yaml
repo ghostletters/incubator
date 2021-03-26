@@ -1,0 +1,24 @@
+tenant: "public"
+namespace: "default"
+name: "debezium-postgres-source"
+topicName: "debezium-postgres-topic"
+archive: "connectors/pulsar-io-debezium-postgres-2.7.1.nar"
+parallelism: 1
+
+configs:
+
+  plugin.name: "pgoutput"
+
+  database.hostname: "localhost"
+  database.port: "5432"
+  database.user: "postgres"
+  database.password: "changeme"
+  database.dbname: "postgres"
+  database.server.name: "foo"
+  schema.whitelist: "public"
+  table.whitelist: "public.gift"
+  # $ bin/pulsar-admin source localrun  --source-config-file debezium-postgres-source-config.yaml
+  # $ bin/pulsar-client consume -s "gifts" public/default/foo.public.gift -n 0
+
+  ## PULSAR_SERVICE_URL_CONFIG
+  pulsar.service.url: "pulsar://127.0.0.1:6650"

@@ -13,3 +13,6 @@ echo
 echo Open UI at http://localhost:9527
 echo name: admin
 echo password: changeme
+echo
+echo Environment Name: pulsar
+echo Service URL: http://pulsar:8080

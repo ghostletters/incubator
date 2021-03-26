@@ -9,5 +9,5 @@ echo
 sed -i "s/PULSAR_VERSION=.*/PULSAR_VERSION=${PULSAR_VERSION}/" ./docker/.env
 sed -i "s/PULSAR_VERSION.*/PULSAR_VERSION \`${PULSAR_VERSION}\`/" ./README.md
 
-#curl https://downloads.apache.org/pulsar/pulsar-${PULSAR_VERSION}/connectors/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar \
-#  --output docker/io_connectors/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar
+curl https://downloads.apache.org/pulsar/pulsar-${PULSAR_VERSION}/connectors/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar \
+  --output docker/io_connectors/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar

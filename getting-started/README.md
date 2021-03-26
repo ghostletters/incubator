@@ -21,6 +21,17 @@ docker-compose -f ./docker/docker-compose.yml up
 - [pulsar](https://pulsar.apache.org/en/) - messaging and streaming platform
 - [pulsarmanager](https://pulsar.apache.org/docs/en/administration-pulsar-manager/) - pulsar frontend
 
+# Pulsar Setup
+
+- download [Pulsar Binary](https://pulsar.apache.org/en/download/)
+- unzip
+- copy debezium IO connector `pulsar-io-debezium-postgres-2.7.1.nar` into `<pulsar folder>/connectors/` folder
+- copy debezium IO config `debezium-postgres-source-config.yaml` into `<pulsar folder>/` folder
+- change into folder `cd <pulsar folder>`
+- run `bin/pulsar-admin source localrun  --source-config-file debezium-postgres-source-config.yaml`
+
+Full example [Pulsar Docu - Debezium source connector](https://pulsar.apache.org/docs/en/io-debezium-source/#example-of-postgresql)
+
 # Quarkus App (Java)
 
 This project uses [Quarkus](https://quarkus.io/), the Supersonic Subatomic Java Framework.
@@ -29,6 +40,8 @@ You can run the application in dev mode that enables live coding using:
 ```
 ./mvnw quarkus:dev
 ```
+
+Create `Gift` entities via http://localhost:8081/hello
 
 # Optional: Pulsar Manager
 
