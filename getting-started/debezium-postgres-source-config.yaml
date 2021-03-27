@@ -2,7 +2,7 @@ tenant: "public"
 namespace: "default"
 name: "debezium-postgres-source"
 topicName: "debezium-postgres-topic"
-archive: "connectors/pulsar-io-debezium-postgres-2.7.1.nar"
+archive: "connectors/pulsar-io-debezium-postgres-2.7.1.nar
 parallelism: 1
 
 configs:

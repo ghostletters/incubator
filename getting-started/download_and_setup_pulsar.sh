@@ -17,6 +17,7 @@ mv -r apache-pulsar-${PULSAR_VERSION} ~/dev/
 mkdir ~/dev/apache-pulsar-${PULSAR_VERSION}/connectors/
 cp ./docker/io_connectors/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar ~/dev/apache-pulsar-${PULSAR_VERSION}/connectors/
 
+sed -i "s/pulsar-io-debezium-postgres-.*/pulsar-io-debezium-postgres-${PULSAR_VERSION}.nar/" ./debezium-postgres-source-config.yaml
 cp debezium-postgres-source-config.yaml ~/dev/apache-pulsar-${PULSAR_VERSION}/
 
 echo
