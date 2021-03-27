@@ -41,3 +41,6 @@ release.properties
 # Java
 *.jar
 *.nar
+
+# Archives
+*.tar.gz

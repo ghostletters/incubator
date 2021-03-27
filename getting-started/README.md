@@ -4,6 +4,8 @@ Downlaod [Debezium PostgreSQL CDC source](https://pulsar.apache.org/en/download/
 ```
 sh ./download_io_connector.sh
 ```
+
+What script does:
 - copies the `.nar` file to `./docker/io_connectors/`. 
 - updates `docker-compose.yml` with pulsar client version from `pom.xml` 
   - PULSAR_VERSION `2.7.1`
@@ -23,12 +25,15 @@ docker-compose -f ./docker/docker-compose.yml up
 
 # Pulsar Setup
 
-- download [Pulsar Binary](https://pulsar.apache.org/en/download/)
-- unzip
-- copy debezium IO connector `pulsar-io-debezium-postgres-2.7.1.nar` into `<pulsar folder>/connectors/` folder
-- copy debezium IO config `debezium-postgres-source-config.yaml` into `<pulsar folder>/` folder
-- change into folder `cd <pulsar folder>`
-- run `bin/pulsar-admin source localrun  --source-config-file debezium-postgres-source-config.yaml`
+Downlaod and configure [Pulsar Binary](https://pulsar.apache.org/en/download/) via
+```
+sh ./download_and_setup_pulsar.sh
+```
+
+What script does:
+- unzips pulsar into `~/dev/<pulsar folder>`
+- copies debezium IO connector into `<pulsar folder>/connectors/` folder + config file
+- prints command to start the Pulsar Debezium connector in local run mode
 
 Full example [Pulsar Docu - Debezium source connector](https://pulsar.apache.org/docs/en/io-debezium-source/#example-of-postgresql)
 
@@ -49,7 +54,7 @@ Create admin account via
 ```
 sh create_pulsar_manager_admin.sh
 ```
-
+Afterwards:
 - Open UI at http://localhost:9527
   - login: `admin`
   - password: `changeme`
